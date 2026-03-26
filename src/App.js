@@ -45,6 +45,8 @@ function App() {
       <Route path="/Addproduct" element={<Addproduct/>} />
       <Route path="/makepayment" element={<Mpesapayment/>} />
     </Routes>
+
+    
     </div>
     </BrowserRouter>
   );
