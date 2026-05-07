@@ -36,9 +36,9 @@ function App() {
         
       </header>
     <nav>
-      <Link to="/signup" className='btn btn-danger m-2'>Signup 👤</Link>
-      <Link to="/signin"  className='btn btn-danger m-2'>Signin 🔓 </Link>
-      <Link to="/" className='btn btn-danger m-2'>Get products 🛒</Link>
+      <Link to="/signup" className='btn btn-danger m-2'>Signup </Link>
+      <Link to="/signin"  className='btn btn-danger m-2'>Signin  </Link>
+      <Link to="/" className='btn btn-danger m-2'>Get products </Link>
       
     </nav>
     <Routes>
