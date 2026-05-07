@@ -71,7 +71,7 @@ const Getproduct = () => {
       
 
 
-      <h5 className='text-center text-info mt-3'>Search and sort vehicles to find your perfect match!</h5>
+      <h5 className='text-center text-info mt-3'>Search and sort cars to find your perfect match!</h5>
       <div className="row justify-content-center mt-3 mb-4">
         {/* search  */}
         <div className="col-md-4 mb-2">
