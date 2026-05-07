@@ -1,43 +1,33 @@
 import React from 'react'
 
 const Carousel = () => {
+  const slides = [
+    { id: 1, src: 'images/Ford Ad.jpg', alt: 'Ford' },
+    { id: 2, src: 'images/Astonmartin.jpg', alt: 'Aston Martin' },
+    { id: 3, src: 'images/Dreams are valid.jpg', alt: 'Dreams' },
+    { id: 4, src: 'images/M4.jpg', alt: 'M4' }
+  ]
+
   return (
-    
-        <section class="row">
-            <div class="col-md-12">
-                {/* <!-- a division containing carousel content  --> */}
-                <div class="carousel slide" data-bs-ride="carousel" id="mycarousel">
-                    {/* <!-- inner division with images  --> */}
-                     <div class="carousel-inner">
-                        {/* <!-- div with image 1  --> */}
-                        <div class="carousel-item active">
-                            <img src="images/slide1.jpg" alt="slide 1" />
-                        </div>
-                        {/* <!-- div with image 2  --> */}
-                        <div class="carousel-item">
-                            <img src="images/slide2.jpg" alt="slide 2" />
-                        </div>
-                        {/* <!-- div with image 3  --> */}
-                        <div class="carousel-item">
-                            <img src="images/slide3.jpg" alt="slide 3" />
-                        </div>
-                        {/* <!-- div with image 4  --> */}
-                        <div class="carousel-item">
-                            <img src="images/slide4.jpg" alt="slide 4" />
-                        </div>
-                    </div>
-                    {/* <!-- previous control  --> */}
-                    <a href="#mycarousel" data-bs-slide="prev" class="carousel-control-prev">
-                        <span class="carousel-control-prev-icon bg-danger"></span>
-                    </a>
-                    {/* <!-- next control  --> */}
-                    <a href="#mycarousel" data-bs-slide="next" class="carousel-control-next">
-                        <span class="carousel-control-next-icon bg-danger"></span>
-                    </a>
-                </div>
-            </div>
-        </section>
-        
+    <section className="row">
+      <div className="col-md-12">
+        <div className="carousel slide" data-bs-ride="carousel" id="mycarousel">
+          <div className="carousel-inner">
+            {slides.map((slide, index) => (
+              <div key={slide.id} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
+                <img src={slide.src} alt={slide.alt} style={{ width: '100%', height: '600px', objectFit: 'cover' }} />
+              </div>
+            ))}
+          </div>
+          <a href="#mycarousel" data-bs-slide="prev" className="carousel-control-prev">
+            <span className="carousel-control-prev-icon"></span>
+          </a>
+          <a href="#mycarousel" data-bs-slide="next" className="carousel-control-next">
+            <span className="carousel-control-next-icon"></span>
+          </a>
+        </div>
+      </div>
+    </section>
   )
 }
 

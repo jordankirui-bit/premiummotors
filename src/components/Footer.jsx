@@ -1,44 +1,59 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Footer = () => {
+  const [email, setEmail] = useState('')
+  const [comment, setComment] = useState('')
+  const [submitStatus, setSubmitStatus] = useState('')
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitStatus('Message sent! ⚡')
+    setEmail('')
+    setComment('')
+    setTimeout(() => setSubmitStatus(''), 3000)
+  }
+
   return (
     <div>
-         
-        <section class="row p-3 bg-warning">
-            {/* <!-- child 1 --> */}
-            <div class="col-md-4">
-                <h2 class="text-center text-white">About us</h2>
-                <p class="text-white">We sell all kinds of Home Furniture and accaessories just for you.We make sure
-                    that we meet topnotch quality</p>
-            </div>
-            {/* <!-- child 2  --> */}
-            <div class="col-md-4">
-                <h2 class="text-center text-white">Contact us</h2>
-                <form action="">
-                    <input type="email" class="form-control" placeholder="enter your email" /><br/><br/>
-                    <textarea name="" id="" class="form-control" placeholder="Leave a comment"></textarea><br/><br/>
-                    <input type="submit" class="btn btn-outline-danger" value="Send message" />
-                </form>
-            </div>
-            {/* <!-- child 3  --> */}
-            <div class="col-md-4">
-                <h2 class="text-center text-white">Stay connected</h2>
-                <a href="facebook.com">
-                    <img src="images/fb.png" alt="" />
-                </a>
-                <a href="">
-                    <img src="images/in.png" alt="" />
-                </a>
-                <a href="">
-                    <img src="images/x.png" alt="" />
-                </a>
-                <p>You can find us on the social media platforms above @tumaini.com</p>
-            </div>
-        </section>
-        <footer class="p-3 bg-dark text-center">
-        <b class="text-white">Developed by Jordan Kimutai &copy; 2026</b>
-        </footer>
-        
+      <section className="row p-3 bg-warning">
+        <div className="col-md-4">
+          <h2 className="text-center text-white">🚀 ABOUT US</h2>
+          <p className="text-white">We sell premium motors and vehicles with unmatched quality. Every vehicle is thoroughly inspected to ensure top-notch standards and customer satisfaction.</p>
+        </div>
+        <div className="col-md-4">
+          <h2 className="text-center text-white">📧 CONTACT US</h2>
+          <form onSubmit={handleSubmit}>
+            <input 
+              type="email" 
+              className="form-control" 
+              placeholder="Enter your email" 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            /><br/><br/>
+            <textarea 
+              className="form-control" 
+              placeholder="Leave a comment"
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+            ></textarea><br/><br/>
+            <input type="submit" className="btn btn-outline-danger" value="Send message" />
+            {submitStatus && <p className="text-success mt-2">{submitStatus}</p>}
+          </form>
+        </div>
+        <div className="col-md-4">
+          <h2 className="text-center text-white">🔗 STAY CONNECTED</h2>
+          <p style={{ marginBottom: '15px' }}>
+            <a href="https://facebook.com" className="text-white mx-2 text-decoration-none" title="Facebook">📘 Facebook</a>
+            <a href="https://linkedin.com" className="text-white mx-2 text-decoration-none" title="LinkedIn">💼 LinkedIn</a>
+            <a href="https://twitter.com" className="text-white mx-2 text-decoration-none" title="Twitter">𝕏 Twitter</a>
+          </p>
+          <p className="text-white">Find us on social media @premiummotors | Contact: +254 795553217</p>
+        </div>
+      </section>
+      <footer className="p-3 bg-dark text-center">
+        <b className="text-white">⚡ Developed by Jordan Kimutai &copy; 2026 ⚡</b>
+      </footer>
     </div>
   )
 }
